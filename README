@@ -1,0 +1,21 @@
+This project was once used as an example of how to do persistence layer testing in Java in a presentation i did.
+
+It enables test code which looks something like this:
+
+@TestData(filename="StoryDaoTestData.xml")
+public class StoryDaoTest extends DaoTest {
+
+        @Autowired StoryDao storyDao;
+        
+        @Test   
+        public void shouldFindStoryById() {
+                Story story = storyDao.findById(1l);
+                assertEquals(1l, story.getId().longValue());
+        }
+
+}
+
+
+This project was originally hosted at google code,
+http://code.google.com/p/java-persistence-test-example/
+
